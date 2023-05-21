@@ -1,1 +1,2 @@
-export { default as Post } from './Post/Post.component'
+export { default as Reel } from './Reel/Reel.component';
+export { default as ActionIcon } from './ActionIcon/ActionIcon.component';

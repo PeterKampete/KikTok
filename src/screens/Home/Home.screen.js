@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import { Post } from '../../components';
+import { Reel } from '../../components';
+import { reelData } from '../../../assets/data/reelData';
 
 const Home = () => {
   return (
     <View>
-      <Post />
+      <Reel post={reelData[0]} />
     </View>
   );
 };
