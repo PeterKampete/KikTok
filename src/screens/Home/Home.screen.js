@@ -6,7 +6,7 @@ import { reelData } from '../../../assets/data/reelData';
 const Home = () => {
   return (
     <View>
-      <Reel post={reelData[0]} />
+      <Reel post={reelData} />
     </View>
   );
 };

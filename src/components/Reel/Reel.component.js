@@ -10,9 +10,10 @@ import styles from './styles';
 import ActionIcon from '../ActionIcon/ActionIcon.component';
 
 const Reel = (props) => {
-  const { post } = props;
+  const [post, setPost] = useState(props.post);
   const video = useRef(null);
   const [status, setStatus] = useState({});
+  const [isLiked, setIsLiked] = useState(false);
 
   const onPlayPausePress = () => {
     if (status.isPlaying) {
@@ -22,6 +23,12 @@ const Reel = (props) => {
     }
   };
 
+  const onLikePress = () => {
+    const likedToAdd = isLiked ? -1 : 1;
+    setPost({ ...post, likes: post.likes + likedToAdd });
+    setIsLiked(!isLiked);
+  };
+
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={onPlayPausePress}>
@@ -29,9 +36,7 @@ const Reel = (props) => {
           <Video
             ref={video}
             style={styles.video}
-            source={{
-              uri: post.songImage,
-            }}
+            source={post.uri}
             resizeMode={ResizeMode.COVER}
             isLooping
             onPlaybackStatusUpdate={(status) => setStatus(status)}
@@ -44,9 +49,14 @@ const Reel = (props) => {
               />
               <ActionIcon
                 renderIcon={() => (
-                  <AntDesign name='heart' size={22} color='white' />
+                  <AntDesign
+                    name='heart'
+                    size={22}
+                    color={isLiked ? 'red' : 'white'}
+                  />
                 )}
                 text={post.likes}
+                onPress={onLikePress}
               />
               <ActionIcon
                 renderIcon={() => (

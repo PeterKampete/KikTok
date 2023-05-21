@@ -1,13 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 import styles from './styles';
 
-const ActionIcon = ({ text = '123', renderIcon }) => {
+const ActionIcon = ({ text = '123', renderIcon, onPress }) => {
   return (
-    <View style={styles.iconContainer}>
+    <TouchableOpacity style={styles.iconContainer} onPress={onPress}>
       {renderIcon?.()}
       <Text style={styles.statsLabel}>{text}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
