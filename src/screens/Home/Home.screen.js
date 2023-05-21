@@ -1,12 +1,26 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { View, Text, FlatList, Dimensions } from 'react-native';
+import React, { useCallback } from 'react';
+import Constants from 'expo-constants';
+
 import { Reel } from '../../components';
-import { reelData } from '../../../assets/data/reelData';
+import posts from '../../../assets/data/posts';
 
 const Home = () => {
+  const height = Constants.statusBarHeight;
+  const renderItem = ({ item, index }) => {
+    return <Reel item={item} />;
+  };
   return (
     <View>
-      <Reel post={reelData} />
+      <FlatList
+        data={posts}
+        renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
+        snapToInterval={Dimensions.get('window').height + height}
+        snapToAlignment='start'
+        decelerationRate='fast'
+      />
     </View>
   );
 };

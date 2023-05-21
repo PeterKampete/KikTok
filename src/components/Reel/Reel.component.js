@@ -9,8 +9,8 @@ import Fontisto from 'react-native-vector-icons/Fontisto';
 import styles from './styles';
 import ActionIcon from '../ActionIcon/ActionIcon.component';
 
-const Reel = (props) => {
-  const [post, setPost] = useState(props.post);
+const Reel = ({ item }) => {
+  const [post, setPost] = useState(item);
   const video = useRef(null);
   const [status, setStatus] = useState({});
   const [isLiked, setIsLiked] = useState(false);
@@ -45,7 +45,7 @@ const Reel = (props) => {
             <View style={styles.rightContainer}>
               <Image
                 style={styles.profilePicture}
-                source={post.user.imageUri}
+                source={post?.user?.imageUri}
               />
               <ActionIcon
                 renderIcon={() => (
@@ -73,7 +73,7 @@ const Reel = (props) => {
             </View>
             <View style={styles.bottomContainer}>
               <View>
-                <Text style={styles.handle}>{post.user.username}</Text>
+                <Text style={styles.handle}>{post?.user.username}</Text>
                 <Text style={styles.description}>{post.description}</Text>
                 <View style={styles.songRow}>
                   <Entypo name='beamed-note' size={22} color='white' />

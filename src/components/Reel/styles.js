@@ -1,8 +1,12 @@
+import { StatusBar } from 'expo-status-bar';
 import { Dimensions, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+
+const height = Constants.statusBarHeight;
 
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height - 50,
+    height: Dimensions.get('window').height + height,
     width: Dimensions.get('window').width,
     flex: 1,
   },
@@ -21,7 +25,6 @@ const styles = StyleSheet.create({
     left: 0,
     bottom: 0,
     right: 0,
-    backgroundColor: 'red',
   },
   uiContainer: {
     height: '100%',
