@@ -27,7 +27,7 @@ export default posts = [
     likes: 123,
     comments: 12,
     shares: 44,
-    uri: require('../videos/video1.mp4'),
+    uri: require('../videos/video2.mp4'),
   },
   // {
   //   id: 'p3',

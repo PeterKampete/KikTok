@@ -1,0 +1,67 @@
+export const comments = [
+  {
+    id: '0',
+    profile: require('../images/profile.jpg'),
+    comment: 'How neatly I write the date in my book',
+    username: 'peter_findings',
+    duration: '22h',
+    likes: '1678',
+    numOfReplies: 1,
+    replies: [
+      {
+        id: '0',
+        profile: require('../images/timeless.jpg'),
+        comment: 'Hello I think this guy is no good',
+        username: 'leoness@rid',
+        duration: '03-12',
+        likedByCreator: false,
+      },
+      {
+        id: '1',
+        profile: require('../images/profile.jpg'),
+        comment: 'Hello I think this guy is no good',
+        username: 'leoness@rid',
+        duration: '03-12',
+        likedByCreator: true,
+      },
+    ],
+  },
+  {
+    id: '1',
+    profile: require('../images/profile.jpg'),
+    comment: 'Hello There this is wonderful',
+    username: 'udo@rebel',
+    duration: '22h',
+    likes: '1678',
+    numOfReplies: 2,
+    replies: [
+      {
+        id: '0',
+        profile: require('../images/timeless.jpg'),
+        comment: 'Hello I think this guy is no good',
+        username: 'aioin@rid',
+        duration: '03-12',
+        likedByCreator: true,
+      },
+    ],
+  },
+  {
+    id: '2',
+    profile: require('../images/profile.jpg'),
+    comment: 'Hello There this is wonderful',
+    username: 'udo@rebel',
+    duration: '22h',
+    likes: '1678',
+    numOfReplies: 2,
+    replies: [
+      {
+        id: '0',
+        profile: require('../images/timeless.jpg'),
+        comment: 'Hello I think this guy is no good',
+        username: 'aioin@rid',
+        duration: '03-12',
+        likedByCreator: true,
+      },
+    ],
+  },
+];

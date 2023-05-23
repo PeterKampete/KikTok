@@ -6,7 +6,7 @@ const height = Constants.statusBarHeight;
 
 const styles = StyleSheet.create({
   container: {
-    height: Dimensions.get('window').height + height,
+    height: Dimensions.get('window').height + height - 48,
     width: Dimensions.get('window').width,
     flex: 1,
   },
@@ -83,6 +83,19 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     objectFit: 'contain',
   },
+  inputActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  cancel: {
+    padding: 20,
+    alignItems: 'center',
+    paddingBottom: 30,
+    paddingTop: 16
+  },
+  shareIcons: {
+    flexDirection: 'row',
+  }
 });
 
 export default styles;
