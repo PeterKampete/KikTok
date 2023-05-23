@@ -29,7 +29,7 @@ const Reel = ({ item }) => {
   const [visible, setVisible] = useState(false);
   const [shareVisible, setShareVisible] = useState(false);
   const shareModalHeight =
-    Dimensions.get('window').height - Dimensions.get('screen').height / 2;
+    Dimensions.get('window').height - Dimensions.get('screen').height / 1.7;
 
   const onPlayPausePress = () => {
     if (status.isPlaying) {
@@ -170,9 +170,10 @@ const Reel = ({ item }) => {
         onClose={() => setShareVisible(false)}
         heading='Share to'
         textStyle={{ fontWeight: 'bold' }}
-        headerStyle={{ marginBottom: 22 }}
+        headerStyle={{ marginBottom: 30 }}
         bgColor='#F5F5F4'
         height={shareModalHeight}
+        padding={16}
         renderExtraContent={() => (
           <View
             style={{
@@ -189,9 +190,130 @@ const Reel = ({ item }) => {
         )}
       >
         <View style={styles.shareIcons}>
-          <Image source={require('../../../assets/images/share-whatsapp.png')} />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/share-whatsapp.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Whatsapp'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/share-whatsapp.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Status'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/share-message.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Message'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/share-sms.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='SMS'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/share-messenger.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Messenger'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/share-instagram.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Instagram'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
         </View>
-        <Text>Sare to</Text>
+        <View style={styles.hairline} />
+        <View style={styles.shareIcons}>
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/report-icon.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Report'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/unintrested-icon.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Not Interested'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/save-video-icon.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Save video'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/duet-icon.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Duet'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/react-icon.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='React'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+          <ActionIcon
+            renderIcon={() => (
+              <Image
+                source={require('../../../assets/images/favorites-icon.png')}
+                style={{ width: 40, height: 40 }}
+              />
+            )}
+            text='Add Favorite'
+            textStyle={{ fontSize: 12, color: '#4E4F57', fontWeight: 'normal' }}
+          />
+        </View>
       </Modal>
     </View>
   );

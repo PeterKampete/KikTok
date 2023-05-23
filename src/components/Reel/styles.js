@@ -95,6 +95,14 @@ const styles = StyleSheet.create({
   },
   shareIcons: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  hairline: {
+    borderTopColor: '#DADBDB',
+    borderBottomWidth: 0.3,
+    marginVertical: 16,
+    opacity: 0.3
   }
 });
 
